@@ -16,3 +16,9 @@ function sortear(){
 function obterNumeroAleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function rolarD20(){
+    return Math.floor(Math.random() * 20);
+    //console.log(parseInt(Math.random() * 20));
+    /*será imprimido no console um número inteiro de 0 a 20*/
+}
