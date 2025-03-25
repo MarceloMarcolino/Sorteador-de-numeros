@@ -10,6 +10,9 @@ function sortear(){
         sorteados.push(numero);
     }
 
+    alert(`Quantidade: ${quantidade}`);
+    alert(`Do número: ${de}`);
+    alert(`Até o número: ${ate}`);
     alert(sorteados);
 }
 
