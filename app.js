@@ -3,6 +3,12 @@ function sortear(){
     const de = parseInt(document.getElementById('de').value);
     const ate = parseInt(document.getElementById('ate').value);
 
+    // Verifica se o valor inicial é maior que o valor final
+    if (de > ate) {
+        alert(`Erro: O número inicial (${de}) é maior que o número final (${ate}).`);
+        return;
+    }
+
     // Valida se a faixa é suficiente para sortear a quantidade de números
     const intervalo = ate - de + 1;
     if (intervalo < quantidade) {
