@@ -9,6 +9,12 @@ function sortear(){
         return;
     }
 
+    // Jeito diferente de verificar se o intervalo é suficiente para a quantidade de números
+    if(quantidade > (ate - de + 1)) {
+        alert(`Erro: A quantidade de números (${quantidade}) é maior que o intervalo informado pelo número inicial (${de}) até o número final (${ate}).`);
+        return;
+    }
+
     // Valida se a faixa é suficiente para sortear a quantidade de números
     const intervalo = ate - de + 1;
     if (intervalo < quantidade) {
@@ -22,9 +28,14 @@ function sortear(){
         // Gera um número aleatório
         numero = obterNumeroAleatorio(de, ate);
 
+        // Contador para rastrear o número de tentativas
+        let tentativas = 0
+
         // Verifica se o número já foi sorteado, caso sim, sorteia novamente
         while (sorteados.includes(numero)) {
             numero = obterNumeroAleatorio(de, ate);
+            tentativas++; // Incrementa o contador de tentativas
+            alert(`Tentativa ${tentativas} de obter um número diferente para o ${i+1}º número. Clique em OK para repetir.`);
         }
         // Adiciona o número sorteado ao array
         sorteados.push(numero);
